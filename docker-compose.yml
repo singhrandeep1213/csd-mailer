@@ -1,0 +1,14 @@
+version: '3'
+services:
+        csd-mailer_cont:
+                build: .
+                command: node index.js
+                image: csd-mailer:1.0
+                restart: always
+                container_name: csd-mailer_cont
+                volumes:
+                        - .:/usr/app/
+                        - /usr/app/node_modules
+                ports:
+                        - "3001:3001"
+                
